@@ -22,6 +22,10 @@ export const getPasswordController = async (
     const contraSenha = await scraping(serial, senha);
     await reply.code(200).send(contraSenha);
   } catch (error) {
-    await reply.code(500).send({ error: `Erro interno do servidor:${error}` });
+    // Log error internally and return a generic message to the client
+    // Avoid exposing stack traces or internal details
+    // eslint-disable-next-line no-console
+    console.error('getPasswordController error:', error);
+    await reply.code(500).send({ error: 'Erro interno do servidor' });
   }
 };

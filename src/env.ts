@@ -7,6 +7,7 @@ const envSchema = z.object({
   PASSWORD: z.string(),
   BASE_URL: z.string(),
   ORIGIN_REQUEST: z.string(),
+  API_KEY: z.string(),
 });
 
 export const env = envSchema.parse(process.env);
