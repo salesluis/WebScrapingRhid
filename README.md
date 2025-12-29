@@ -4,7 +4,7 @@ API para automatização de obtenção de senhas de RHID através de web scrapin
 
 ## 📋 Descrição
 
-Este projeto é uma API REST que automatiza o processo de obtenção de senhas de RHID através de web scraping. A aplicação utiliza Puppeteer para navegar em um sistema web, executa o chromium, bloqueia requisições de fontes, css e assets para performance, e faz login e extrai informações específicas baseadas em parâmetros fornecidos no corpo da requisição.
+Este projeto é uma API REST que automatiza o processo de obtenção de senhas de RHID através de web scraping. A aplicação recbe dados via URI para que possa ser extraido os dados necessário, foi ultilizado dessa abordagem por conta de uma integração com sistema de terceiros que não lidava bem com requests com dados via payload/body, a aplicação utiliza Puppeteer para navegar em um sistema web terceiro, executa o chromium, bloqueia requisições de fontes, css e assets para performance, faz o login e extrai informações específicas baseadas em parâmetros fornecidos no corpo da requisição.
 
 ## 🏗️ System Design
 
@@ -96,8 +96,8 @@ src/
 1. **Clone o repositório**:
 
 ```bash
-git clone https://github.com/salesluis/roboot_rhid
-cd roboot_rhid
+git clone https://github.com/salesluis/WebScrapingRhid
+cd WebScrapingRhid
 ```
 
 2. **Instale as dependências**:
@@ -137,13 +137,10 @@ npm start
 
 Obtém a senha de um RHID específico.
 
-**Request Body**:
+**Request QueryString**:
 
-```json
-{
-  "serial": "string",
-  "senha": "string"
-}
+```url
+BASE_URL:PORT/rhid?serial={serial}&senha={senha}
 ```
 
 **Response**:
