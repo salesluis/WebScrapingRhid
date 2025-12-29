@@ -1,0 +1,12 @@
+services:
+  rhid:
+    container_name: rhid
+    build: .
+    environment:
+      - PASSWORD=${PASSWORD}
+      - EMAIL=${EMAIL}
+      - BASE_URL=${BASE_URL}
+      - ORIGIN_REQUEST=${ORIGIN_REQUEST}
+    ports:
+      - "3333:3333"
+    restart: always

@@ -1,0 +1,29 @@
+{
+  "name": "automatize-rhid",
+  "version": "1.0.0",
+  "description": "API para obter a senha de um RHID",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file .env --experimental-strip-types --no-warnings src/server.ts",
+    "dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "Luis Felipe Ferreira Sales",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "2.0.6",
+    "@types/node": "^22.15.18",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "ultracite": "5.0.32"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "dotenv": "^16.5.0",
+    "fastify": "^5.3.3",
+    "fastify-type-provider-zod": "^5.0.2",
+    "puppeteer": "^24.8.2",
+    "zod": "^4.0.5"
+  }
+}
